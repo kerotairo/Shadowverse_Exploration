@@ -19,7 +19,5 @@ def get_card_data(url, querystring):
     cards_df.to_csv("cards.csv")
 
 
-if os.path.isfile('./cards.csv'):
-    pass
-else:
+if not os.path.isfile('./cards.csv'):
     get_card_data(url,querystring)
